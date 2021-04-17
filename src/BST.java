@@ -38,7 +38,8 @@ public class BST {
                 parent = focusNode;
 
                 //check if the new node should go on the left side of the parent
-                if (newNode.fileWords.getWords().compareToIgnoreCase(focusNode.fileWords.getWords()) > 0) {
+                if (newNode.fileWords.compareTo(focusNode.fileWords) > 0) {
+
 
                     //Switch focus to the left child
                     focusNode = focusNode.leftChild;
@@ -50,7 +51,7 @@ public class BST {
                         parent.leftChild = newNode;
                         return; // all done
                     }
-                } else if (newNode.fileWords.getWords().compareToIgnoreCase(focusNode.fileWords.getWords()) < 0) { // if we get here put the node on the right
+                } else if (newNode.fileWords.compareTo(focusNode.fileWords) < 0) { // if we get here put the node on the right
 
                     focusNode = focusNode.rightChild;
 

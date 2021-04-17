@@ -12,9 +12,8 @@
  */
 public class Node {
      Words fileWords;
-    Node nextNode;
-    Node leftChild;
-    Node rightChild;
+     Node leftChild;
+     Node rightChild;
 
     Node(Words fileWords) {
         this.fileWords = fileWords;
