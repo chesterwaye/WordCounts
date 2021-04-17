@@ -16,18 +16,10 @@ public class BinarySearchTree {
     {
         String data;
         int count;
-        Node left, right;
+        Node left;
+        Node right;
 
-        /* Constructor */
-        public Node()
-        {
-            left = null;
-            right = null;
-            data = "";
-            count=1;
-        }
-
-        /* Constructors */
+          /* Constructors */
         public Node(String text)
         {
             left = null;
@@ -51,33 +43,7 @@ public class BinarySearchTree {
             this.data = data;
         }
 
-        /**
-         * @return the left
-         */
-        public Node getLeft() {
-            return left;
-        }
 
-        /**
-         * @param left the left to set
-         */
-        public void setLeft(Node left) {
-            this.left = left;
-        }
-
-        /**
-         * @return the right
-         */
-        public Node getRight() {
-            return right;
-        }
-
-        /**
-         * @param right the right to set
-         */
-        public void setRight(Node right) {
-            this.right = right;
-        }
 
         public int getCount() {
             return count;
@@ -89,21 +55,22 @@ public class BinarySearchTree {
     }
 
     private Node rootNode;
+
     public BinarySearchTree()
     {
         rootNode = null;
     }
 
-    private Node insert(Node node, String text)
+    private Node insert(Node node, String textFile)
     {
         if (node == null)
-            node = new Node(text);
+            node = new Node(textFile);
         else
         {
-            if (text.compareToIgnoreCase(node.getData()) > 0)
-                node.left = insert(node.left, text);
-            else if (text.compareToIgnoreCase(node.getData()) < 0)
-                node.right = insert(node.right, text);
+            if (textFile.compareToIgnoreCase(node.getData()) > 0)
+                node.left = insert(node.left, textFile);
+            else if (textFile.compareToIgnoreCase(node.getData()) < 0)
+                node.right = insert(node.right, textFile);
             else
             {
                 int count = node.getCount();
@@ -119,16 +86,13 @@ public class BinarySearchTree {
         rootNode = insert(rootNode, text);
     }
 
-    // print nodes In order traversal
+    // print nodes Inorder traversal
     private void printNodes(Node node)
     {
-        if (node == null)
-        {}
-        else
-        {
-            printNodes(node.getLeft());
+        if (node != null) {
+            printNodes((node.left));
             System.out.println("word=" + node.getData()+ ", count=" + node.getCount());
-            printNodes(node.getRight());
+            printNodes(node.right);
         }
     }
 

@@ -1,5 +1,5 @@
 /**
- * Class: ProgramMain
+ * Class: BTSDriver
  *
  * @author Chester Waye
  * @version 1.0 * Course : ITEC 3150, Spring 2021 Written: 4/15/2021
@@ -11,41 +11,39 @@
  * Purpose: –Describe the purpose of this class
  */
 
-import java.io.*;
-import java.util.HashSet;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Set;
+
 
 public class BTSDriver {
 
+    private static BinarySearchTree bst;
 
-    public static Set<String> loadData(String fileName)
+    public static void textFile(String fileName)
             throws FileNotFoundException
     {
 
-        Set<String> words = new HashSet<String>();
-        Scanner in = new Scanner(new File(fileName));
-
-
+          Scanner in = new Scanner(new File(fileName));
 
         // Use any characters other than a-z or A-Z as delimiters
         in.useDelimiter("[^a-zA-Z]+");
         while (in.hasNext())
         {
             bst.insertText(in.next());
-            // words.add(in.next().toLowerCase());
+
         }
-        return words;
+
     }
 
-    private static BinarySearchTree bst;
 
     public static void main(String[] args) throws FileNotFoundException {
 
 
         bst = new BinarySearchTree();
         // Load the tree from the file
-        Set<String> documentWords = loadData("CarlAndTheCottonGin.txt");
+        textFile("CarlAndTheCottonGin.txt");
         // Print the tree in order
         bst.printTree();
 
