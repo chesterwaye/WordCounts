@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  * Class: MyDriver
@@ -20,20 +18,19 @@ public class MyDriver {
     private static BST bst;
 
     public static void textFile(String fileName)
-            throws FileNotFoundException
-    {
+            throws FileNotFoundException {
 
         Scanner in = new Scanner(new File(fileName));
 
         // Use any characters other than a-z or A-Z as delimiters
         in.useDelimiter("[^a-zA-Z]+");
-        while (in.hasNext())
-        {
-            bst.addNode(in.next(),1 );
+        while (in.hasNext()) {
+            bst.addNode(in.next(), 1);
 
         }
 
     }
+
     public static void printHeader() {
 
         System.out.printf("Word %23s", "Count\n");
@@ -45,7 +42,8 @@ public class MyDriver {
 
         bst = new BST();
         textFile("CarlAndTheCottonGin.txt");
-        printHeader();;
+        printHeader();
+        ;
         bst.printTree();
 
     }

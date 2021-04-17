@@ -1,9 +1,3 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-
 /**
  * Class: BST
  *
@@ -17,14 +11,13 @@ import java.util.Set;
  * Purpose: –Describe the purpose of this class
  */
 
-public class BST
-{
+public class BST {
     Node root;
 
     public void addNode(String words, int count) {
 
         //Create a new Node and initialize it
-        Words fWord = new Words( words, count);
+        Words fWord = new Words(words, count);
         Node newNode = new Node(fWord);
 
         //if there is no root this becomes the root
@@ -78,22 +71,18 @@ public class BST
 
 
     // print nodes Inorder traversal
-    private void printNodes(Node node)
-    {
+    private void printNodes(Node node) {
         if (node != null) {
             printNodes((node.leftChild));
-            System.out.printf( "%-6s" ,node.fileWords + "\n");
+            System.out.printf("%-6s", node.fileWords + "\n");
             printNodes(node.rightChild);
         }
     }
 
     // public wrapper to call from outside
-    public void printTree()
-    {
+    public void printTree() {
         printNodes(root);
     }
-
-
 
 
 }
