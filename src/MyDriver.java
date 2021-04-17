@@ -34,13 +34,18 @@ public class MyDriver {
         }
 
     }
+    public static void printHeader() {
 
+        System.out.printf("Word %23s", "Count\n");
+
+    }
 
 
     public static void main(String[] args) throws FileNotFoundException {
 
         bst = new BST();
         textFile("CarlAndTheCottonGin.txt");
+        printHeader();;
         bst.printTree();
 
     }

@@ -44,8 +44,8 @@ public class Words implements Comparable<Words> {
 
     @Override
     public String toString() {
-        return
-                "word = " + words  +
-                ", count = " + count;
+        return String.format("%-15s %10s",
+                 words,
+                count);
     }
 }

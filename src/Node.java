@@ -12,7 +12,7 @@
  */
 public class Node {
      Words fileWords;
-
+    Node nextNode;
     Node leftChild;
     Node rightChild;
 
@@ -20,10 +20,24 @@ public class Node {
         this.fileWords = fileWords;
     }
 
-    @Override
-    public String toString() {
-        return "Node{" +
-                "fileWords=" + fileWords +
-                '}';
+    public Words getFileWords() {
+        return fileWords;
     }
+
+
+    public Node getNextNode() {
+        return nextNode;
+    }
+
+
+    public void setNextNode(Node nextNode) {
+        this.nextNode = nextNode;
+    }
+
+    //    @Override
+//    public String toString() {
+//        return "Node{" +
+//                "fileWords=" + fileWords +
+//                '}';
+//    }
 }
